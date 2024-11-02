@@ -1,13 +1,13 @@
 import React from 'react'
 
-const FeaturedProducts = [
-    {
-        id: 1,
-        name: "Product 1",
-        image: "",
-        Price: 2500.00
-    }
-]
+// const FeaturedProducts = [
+//     {
+//         id: 1,
+//         name: "Product 1",
+//         image: "",
+//         Price: 2500.00
+//     }
+// ]
 const ProductsSection = () => {
   return (
     <section>
