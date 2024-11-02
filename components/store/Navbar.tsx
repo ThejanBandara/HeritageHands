@@ -42,7 +42,7 @@ const Navbar = () => {
   return (
     <nav className='w-full fixed top-0 flex flex-row items-center justify-between px-6 py-2 shadow-sm h-[10vh] z-10 bg-white' ref={container}>
       <Link href={'/'}>
-        <h1>HH</h1>
+        <h1>HeritageHands</h1>
       </Link>
 
       <Input type='text' placeholder='Seach any Item' className='hidden md:flex w-4/12' />
