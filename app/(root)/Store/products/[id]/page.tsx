@@ -1,4 +1,5 @@
 import ReviewBlock from '@/components/store/Review'
+import ReviewSummary from '@/components/store/ReviewSummary'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'
@@ -89,9 +90,10 @@ const DetailsPage = () => {
                         </p>
 
                         <p><span>Category :</span> Wooden Masks</p>
-                        
+
                     </TabsContent>
                     <TabsContent value='reviews'>
+                        <ReviewSummary/>
                         <ReviewBlock/>                       
                         <ReviewBlock/>                       
                         <ReviewBlock/>                       
