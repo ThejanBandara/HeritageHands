@@ -9,7 +9,7 @@ const ProductCard = () => {
     const id = 1;
 
     return (
-        <Link href={`/store/${id}`} className="border-black border-2 rounded-md p-2 relative flex flex-col" >
+        <Link href={`/Store/products/${id}`} className="border-black border-2 rounded-md p-2 relative flex flex-col" >
             {/* Product Image */}
             <Image src={'/product.jpg'} width={250} height={250} alt="product Image" className="self-center"/>
             {/* Product Category */}
