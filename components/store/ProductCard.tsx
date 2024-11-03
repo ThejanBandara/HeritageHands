@@ -1,14 +1,15 @@
 'use client'
 import Image from "next/image"
 import { Badge } from "../ui/badge"
-import { redirect } from "next/navigation"
+import Link from "next/link";
+
 
 const ProductCard = () => {
 
     const id = 1;
 
     return (
-        <button className="border-black border-2 rounded-md p-2 relative flex flex-col" onClick={() => {redirect('/Store/products/' + {id})}}>
+        <Link href={`/store/${id}`} className="border-black border-2 rounded-md p-2 relative flex flex-col" >
             {/* Product Image */}
             <Image src={'/product.jpg'} width={250} height={250} alt="product Image" className="self-center"/>
             {/* Product Category */}
@@ -55,7 +56,7 @@ const ProductCard = () => {
                     <p>Top</p>
                 </Badge>
             </div>
-        </button>
+        </Link>
     )
 }
 
