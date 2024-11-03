@@ -1,11 +1,16 @@
+'use '
 import Image from "next/image"
 import { Badge } from "../ui/badge"
+import { redirect } from "next/navigation"
 
 const ProductCard = () => {
+
+    const id = 1;
+
     return (
-        <div className="border-black border-2 rounded-md p-2 relative">
+        <button className="border-black border-2 rounded-md p-2 relative flex flex-col" onClick={() => {redirect('/Store/products/' + {id})}}>
             {/* Product Image */}
-            <Image src={'/product.jpg'} width={250} height={250} alt="product Image" />
+            <Image src={'/product.jpg'} width={250} height={250} alt="product Image" className="self-center"/>
             {/* Product Category */}
             <p className="text-sm text-gray-500">Wooden Masks</p>
             {/* Product Name */}
@@ -50,7 +55,7 @@ const ProductCard = () => {
                     <p>Top</p>
                 </Badge>
             </div>
-        </div>
+        </button>
     )
 }
 

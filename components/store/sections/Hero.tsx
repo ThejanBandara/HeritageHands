@@ -3,6 +3,7 @@
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'
 import React from 'react'
 import Autoplay from 'embla-carousel-autoplay'
+import Image from 'next/image'
 
 const Hero = () => {
 
@@ -17,14 +18,14 @@ const Hero = () => {
          className='w-full  p-2  bg-gray-100'>
             <CarouselContent className=''>
                 <CarouselItem className='w-full h-full p-2 self-center' key={1}>
-                    <div className='w-full aspect-video flex items-center justify-center '>
-                        item 1
+                    <div className='w-full aspect-video flex items-center justify-center overflow-hidden'>
+                        <Image src={'/banner1.png'} width={1920} height={1080} alt="banner" className='w-fit'/>
                     </div>
                 </CarouselItem>
 
                 <CarouselItem className='w-full h-full p-2' key={2}>
-                    <div className='w-full aspect-video flex items-center justify-center'>
-                        item 2
+                <div className='w-full aspect-video flex items-center justify-center overflow-hidden'>
+                        <Image src={'/banner2.png'} width={1920} height={1080} alt="banner" className='w-fit'/>
                     </div>
                 </CarouselItem>
 
