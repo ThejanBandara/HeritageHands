@@ -6,36 +6,55 @@ import Link from 'next/link'
 
 const ProductsSection = () => {
     return (
-        <section className='mt-12 px-4'>
+        <section className='mt-12 md:mt-8 px-4'>
             <div>
                 <div className='flex items-center justify-between'>
-                    <h1 className='text-lg font-bold'>Recommend For You</h1>
-                    <Link href={'/store'} className='text-sm'>See More</Link>
+                    <h1 className='text-lg md:text-2xl font-bold'>Recommended For You</h1>
+                    <Link href={'/store'} className='text-sm md:text-base'>See More</Link>
                 </div>
 
                 <div className='mt-2'>
                     <Carousel>
                         <CarouselContent>
-                            <CarouselItem className=' basis-[55%]'>
+                            <CarouselItem className=' basis-[55%] md:basis-[30%] lg:basis-[20%] xl:basis-[18%]'>
                                 <ProductCard />
                             </CarouselItem>
 
-                            <CarouselItem className=' basis-[55%]'>
+                            <CarouselItem className=' basis-[55%] md:basis-[30%] lg:basis-[20%] xl:basis-[18%]'>
                                 <ProductCard />
                             </CarouselItem>
 
-                            <CarouselItem className=' basis-[55%]'>
+                            <CarouselItem className=' basis-[55%] md:basis-[30%] lg:basis-[20%] xl:basis-[18%]'>
                                 <ProductCard />
                             </CarouselItem>
 
-                            <CarouselItem className=' basis-[55%]'>
+                            <CarouselItem className=' basis-[55%] md:basis-[30%] lg:basis-[20%] xl:basis-[18%]'>
                                 <ProductCard />
                             </CarouselItem>
 
-                            <CarouselItem className=' basis-[55%]'>
+                            <CarouselItem className=' basis-[55%] md:basis-[30%] lg:basis-[20%] xl:basis-[18%]'>
                                 <ProductCard />
                             </CarouselItem>
 
+                            <CarouselItem className=' basis-[55%] md:basis-[30%] lg:basis-[20%] xl:basis-[18%]'>
+                                <ProductCard />
+                            </CarouselItem>
+
+                            <CarouselItem className=' basis-[55%] md:basis-[30%] lg:basis-[20%] xl:basis-[18%]'>
+                                <ProductCard />
+                            </CarouselItem>
+
+                            <CarouselItem className=' basis-[55%] md:basis-[30%] lg:basis-[20%] xl:basis-[18%]'>
+                                <ProductCard />
+                            </CarouselItem>
+
+                            <CarouselItem className=' basis-[55%] md:basis-[30%] lg:basis-[20%] xl:basis-[18%]'>
+                                <ProductCard />
+                            </CarouselItem>
+
+                            <CarouselItem className=' basis-[55%] md:basis-[30%] lg:basis-[20%] xl:basis-[18%]'>
+                                <ProductCard />
+                            </CarouselItem>
                         </CarouselContent>
                     </Carousel>
                 </div>
@@ -43,29 +62,49 @@ const ProductsSection = () => {
 
             <div className='mt-12'>
                 <div className='flex items-center justify-between'>
-                    <h1 className='text-lg font-bold'>New Arrivals</h1>
-                    <Link href={'/store'} className='text-sm'>See More</Link>
+                    <h1 className='text-lg md:text-2xl font-bold'>New Arrivals</h1>
+                    <Link href={'/store'} className='text-sm md:text-base'>See More</Link>
                 </div>
                 <div className='mt-2'>
                     <Carousel>
                         <CarouselContent>
-                            <CarouselItem className=' basis-[55%]'>
+                            <CarouselItem className=' basis-[55%] md:basis-[30%] lg:basis-[20%] xl:basis-[18%]'>
                                 <ProductCard />
                             </CarouselItem>
 
-                            <CarouselItem className=' basis-[55%]'>
+                            <CarouselItem className=' basis-[55%] md:basis-[30%] lg:basis-[20%] xl:basis-[18%]'>
                                 <ProductCard />
                             </CarouselItem>
 
-                            <CarouselItem className=' basis-[55%]'>
+                            <CarouselItem className=' basis-[55%] md:basis-[30%] lg:basis-[20%] xl:basis-[18%]'>
                                 <ProductCard />
                             </CarouselItem>
 
-                            <CarouselItem className=' basis-[55%]'>
+                            <CarouselItem className=' basis-[55%] md:basis-[30%] lg:basis-[20%] xl:basis-[18%]'>
                                 <ProductCard />
                             </CarouselItem>
 
-                            <CarouselItem className=' basis-[55%]'>
+                            <CarouselItem className=' basis-[55%] md:basis-[30%] lg:basis-[20%] xl:basis-[18%]'>
+                                <ProductCard />
+                            </CarouselItem>
+
+                            <CarouselItem className=' basis-[55%] md:basis-[30%] lg:basis-[20%] xl:basis-[18%]'>
+                                <ProductCard />
+                            </CarouselItem>
+
+                            <CarouselItem className=' basis-[55%] md:basis-[30%] lg:basis-[20%] xl:basis-[18%]'>
+                                <ProductCard />
+                            </CarouselItem>
+
+                            <CarouselItem className=' basis-[55%] md:basis-[30%] lg:basis-[20%] xl:basis-[18%]'>
+                                <ProductCard />
+                            </CarouselItem>
+
+                            <CarouselItem className=' basis-[55%] md:basis-[30%] lg:basis-[20%] xl:basis-[18%]'>
+                                <ProductCard />
+                            </CarouselItem>
+
+                            <CarouselItem className=' basis-[55%] md:basis-[30%] lg:basis-[20%] xl:basis-[18%]'>
                                 <ProductCard />
                             </CarouselItem>
 

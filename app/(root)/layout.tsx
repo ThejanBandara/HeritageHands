@@ -9,7 +9,7 @@ export default function RootStoreLayout({
 }>) {
     return (
         
-            <main className="pt-[10vh]">
+            <main className="pt-[10vh] md:pt-[6vh] lg:pt-[2vh]">
                 <Navbar/>
                 {children}
                 <Footer/>
