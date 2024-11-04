@@ -10,7 +10,7 @@ import React from 'react'
 
 const DetailsPage = () => {
     return (
-        <div className='mt-12 px-2'>
+        <div className='mt-12 px-2 bg-white'>
             <div className='flex flex-col gap-1 pb-2'>
                 <p className='font-bold text-xl text-wrap max-w-[95vw]'>Gini Raksha ( Fire Mask )</p>
                 <div className='flex flex-row items-center pt-1'>
