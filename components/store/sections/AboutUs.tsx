@@ -14,7 +14,7 @@ const AboutUs = () => {
       </div>
 
       <div className='mt-8 w-full bg-gray-300 px-6 py-4 flex flex-col'>
-        <p className='w-5/6 text-left pl-2 pt-1 pb-1 border-l-2 border-black font-bold'>&quot;Our mission is to share the soul of Sri Lankan craftsmanship with the world. Every piece tells a story, crafted with love and traditio. &quot;</p>
+        <p className='w-5/6 text-left pl-2 pt-1 pb-1 border-l-2 border-black font-bold'>&quot;Our mission is to share the soul of Sri Lankan craftsmanship with the world. Every piece tells a story, crafted with love and tradition. &quot;</p>
 
         <p className='self-end'>- Kasun Jayasekara, Founder</p>
       </div>

@@ -1,4 +1,4 @@
-import { Carousel, CarouselContent, CarouselItem  } from '@/components/ui/carousel'
+import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'
 import Image from 'next/image'
 import React from 'react'
 
@@ -12,29 +12,12 @@ const Gallery = () => {
       <Carousel>
 
         <CarouselContent>
-          <CarouselItem key={1} className='basis-[20%]'>
-            <div className=' aspect-square size-20 overflow-hidden bg-white border-2 border-black'>1</div>
-          </CarouselItem>
+          {Array.from({ length: 10 }).map((_, index) => (
+            <CarouselItem key={index} className='basis-[30%]'>
+              <div className=' aspect-square size-20 overflow-hidden bg-white border-2 border-black'>1</div>
+            </CarouselItem>
+          ))}
 
-          <CarouselItem key={2} className='basis-[20%]'>
-            <div className=' aspect-square size-20 overflow-hidden bg-white  border-2 border-black'>2</div>
-          </CarouselItem>
-
-          <CarouselItem key={3} className='basis-[20%]'>
-            <div className=' aspect-square size-20 overflow-hidden bg-white  border-2 border-black'>3</div>
-          </CarouselItem>
-
-          <CarouselItem key={4} className='basis-[20%]'>
-            <div className=' aspect-square size-20 overflow-hidden bg-white border-2 border-black'>4</div>
-          </CarouselItem>
-
-          <CarouselItem key={5} className='basis-[20%]'>
-            <div className=' aspect-square size-20 overflow-hidden bg-white  border-2 border-black'>5</div>
-          </CarouselItem>
-
-          <CarouselItem key={6} className='basis-[20%]'>
-            <div className=' aspect-square size-20 overflow-hidden bg-white  border-2 border-black'>6</div>
-          </CarouselItem>
         </CarouselContent>
       </Carousel>
     </div>
