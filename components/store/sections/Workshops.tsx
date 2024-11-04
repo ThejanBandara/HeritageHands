@@ -9,9 +9,11 @@ const WorkshopsSection = () => {
                 <h1 className='text-lg md:text-2xl font-bold'>Our Workshops</h1>
                 <Link href={'/workshops'} className='text-sm'>See More</Link>
             </div>
-            <CourseCard />
-            <CourseCard />
-            <CourseCard />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <CourseCard />
+                <CourseCard />
+                <CourseCard />
+            </div>
         </div>
 
     )

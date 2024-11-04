@@ -14,7 +14,7 @@ const Contact = () => {
         <div className='mt-12 px-4 bg-gray-50 bg-opacity-75'>
             <h1 className='text-lg md:text-2xl font-bold'>Get in touch</h1>
 
-            <form action="" className='mt-2'>
+            <form action="" className='mt-2 md:px-16'>
                 <div>
                     <Label htmlFor='Name'>Your Name</Label>
                     <Input className='border-black' type='text' name='Name' id='Name' placeholder='Albert Einstein' />
@@ -29,7 +29,7 @@ const Contact = () => {
                 </div>
 
             </form>
-            <Button className='mt-4 mb-12'
+            <Button className='mt-4 mb-12 mx-16'
                 onClick={() => {
                     toast({
                         title: "Success!",

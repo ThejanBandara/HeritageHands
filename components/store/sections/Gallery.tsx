@@ -13,8 +13,8 @@ const Gallery = () => {
 
         <CarouselContent>
           {Array.from({ length: 10 }).map((_, index) => (
-            <CarouselItem key={index} className='basis-[30%]'>
-              <div className=' aspect-square size-20 overflow-hidden bg-white border-2 border-black'>1</div>
+            <CarouselItem key={index} className='basis-[30%] md:basis-[15%]'>
+              <div className=' aspect-square size-20 md:size-24 overflow-hidden bg-white border-2 border-black'>1</div>
             </CarouselItem>
           ))}
 
