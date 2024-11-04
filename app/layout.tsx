@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-
+import { Toaster } from "@/components/ui/toaster"
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "HeritageHands",
@@ -15,8 +16,10 @@ export default function RootLayout({
   return (
    
       <html lang="en">
-        <body>
+        <body className=" ">
+          <Image src={'/bg-pattern.jpg'} width={1500} height={1500} alt="banner" className="w-full h-screen overflow-hidden opacity-40 -z-10 fixed top-0  object-cover"/>
           {children}
+          <Toaster />
         </body>
       </html>
   );

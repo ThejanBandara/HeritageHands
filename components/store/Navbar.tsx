@@ -15,7 +15,7 @@ const Navbar = () => {
           <h1 className="font-serif">HH</h1>
         </Link>
 
-        <Input type='text' placeholder='Seach any Item' className='hidden md:flex w-4/12' />
+        <Input type='search' placeholder='Seach any Item' className='hidden md:flex w-4/12' />
 
         <div className='flex flex-row gap-3'>
 
