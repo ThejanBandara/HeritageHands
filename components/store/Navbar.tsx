@@ -5,6 +5,7 @@ import { Badge } from '../ui/badge'
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar'
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover'
 import { Sheet, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from '../ui/sheet'
+import Image from 'next/image'
 
 const Navbar = () => {
 
@@ -12,7 +13,7 @@ const Navbar = () => {
     <nav className='w-full fixed top-0 flex flex-col gap-2 px-6 py-2 shadow-sm z-10 bg-white'>
       <div className="flex flex-row items-center justify-between mt-2">
         <Link href={'/'}>
-          <h1 className="font-serif">HH</h1>
+          <Image src={'/logo.png'} height={70} width={70} alt="logo" priority={true}/>
         </Link>
 
         <Input type='search' placeholder='Seach any Item' className='hidden md:flex w-4/12' />

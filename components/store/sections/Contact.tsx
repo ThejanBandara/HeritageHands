@@ -11,7 +11,7 @@ const Contact = () => {
     const { toast } = useToast()
 
     return (
-        <div className='mt-12 px-4'>
+        <div className='mt-12 px-4 bg-gray-50 bg-opacity-75'>
             <h1 className='text-lg md:text-2xl font-bold'>Get in touch</h1>
 
             <form action="" className='mt-2'>
@@ -28,15 +28,15 @@ const Contact = () => {
                     <Textarea className='border-black' name='Message' id='Message' placeholder='type your message Here' />
                 </div>
 
-                <Button className='mt-2 mb-12' 
-                 onClick={() => {
+            </form>
+            <Button className='mt-4 mb-12'
+                onClick={() => {
                     toast({
-                      title: "Scheduled: Catch up",
-                      description: "Friday, February 10, 2023 at 5:57 PM",
+                        title: "Success!",
+                        description: "Your message has been sent",
                     })
-                  }}
-                  >Submit</Button>
-        </form>
+                }}
+            >Submit</Button>
         </div >
     )
 }
