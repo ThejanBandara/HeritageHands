@@ -3,7 +3,7 @@ import { Button } from "../ui/button"
 
 const CourseCard = () => {
     return (
-        <div className="m-2 mb-4 p-2 border-black border-2 rounded-lg shadow">
+        <div className="m-2 mb-4 p-2 border-black border-2 rounded-lg shadow bg-white">
             <Image src={'/course2.webp'} width={300} height={300} className="w-full rounded-md" alt="course" />
             <div className="pt-2">
                 <p className="font-semibold text-xl">Bamboo Weaving Workshop</p>
