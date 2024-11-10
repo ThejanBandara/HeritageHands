@@ -38,7 +38,7 @@ const LoginPage = () => {
                     </Button>
                 </form>
 
-                <p className='text-sm text-gray-900 py-2 pt-6'>Don't have an account? <Link href={'/register'}><span className='font-semibold underline'>Sign up</span></Link></p>
+                <p className='text-sm text-gray-900 py-2 pt-6'>Don&apos;t have an account? <Link href={'/register'}><span className='font-semibold underline'>Sign up</span></Link></p>
             </div>
         </div>
   )
