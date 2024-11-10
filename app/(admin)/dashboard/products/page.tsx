@@ -1,10 +1,21 @@
 import AddNewProductForm from '@/components/admin/AddNewProduct'
 import { Button } from '@/components/ui/button'
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
+import { Card, CardContent } from '@/components/ui/card'
+import { Dialog, DialogContent,  DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
+
 
 const AdminProductsPage = () => {
   return (
-    <div className='w-full h-screeen'>
+    <div className='w-full h-screen overflow-hidden'>
       <div className='w-full px-4 flex items-center justify-between'>
         <h1 className='text-2xl font-semibold'>Products</h1>
 
@@ -20,16 +31,19 @@ const AdminProductsPage = () => {
           <DialogContent>
             <DialogHeader>
               <DialogTitle>Add new Product</DialogTitle>
-              <DialogDescription>
-
-              </DialogDescription>
             </DialogHeader>
-            <AddNewProductForm/>
+            <AddNewProductForm />
           </DialogContent>
         </Dialog>
 
       </div>
-      <div></div>
+      <Card className='mx-4 my-2 h-[85vh] '>
+        <CardContent>
+          <Table>
+
+          </Table>
+        </CardContent>
+      </Card>
     </div>
   )
 }
