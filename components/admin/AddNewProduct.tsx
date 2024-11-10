@@ -49,7 +49,7 @@ const AddNewProductForm = () => {
 
                 <div className='flex gap-2 items-center'>
                     <Checkbox />
-                    <Label>Add this product to the "On Sale" section</Label>
+                    <Label>Add this product to the &quot;On Sale&quot; section</Label>
                 </div>
 
             </div>
