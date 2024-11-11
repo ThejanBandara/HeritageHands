@@ -1,4 +1,4 @@
-import Navbar from '@/components/store/Navbar'
+
 import React from 'react'
 
 const AdminOrdersPage = () => {
