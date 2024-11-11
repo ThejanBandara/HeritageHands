@@ -2,28 +2,30 @@
 import Image from "next/image"
 import { Badge } from "../ui/badge"
 import Link from "next/link";
+import { FC } from "react";
+import { Product } from "@/types/Product";
 
 
-const ProductCard = () => {
+const ProductCard : FC<Product> = ({productID, productName, productCategory, productPrice, imageURL, isDiscounted, discountedPrice, isProductOnSaleSection, productDescription, productDeliveryOption}) => {
 
     const id = 1;
 
     return (
         <Link href={`/Store/products/${id}`} className="border-black border-2 rounded-md p-2 relative flex flex-col bg-white" >
             {/* Product Image */}
-            <Image src={'/product.jpg'} width={250} height={250} alt="product Image" className="self-center"/>
+            <Image src={imageURL[0]} width={250} height={250} alt="product Image" className="self-center"/>
             {/* Product Category */}
-            <p className="text-sm text-gray-500">Wooden Masks</p>
+            <p className="text-sm text-gray-500">{productCategory}</p>
             {/* Product Name */}
-            <p className="font-semibold overflow-ellipsis overflow-hidden max-w-[95%] whitespace-nowrap pt-2">Gini Raksha (Fire Mask)</p>
+            <p className="font-semibold overflow-ellipsis overflow-hidden max-w-[95%] whitespace-nowrap pt-2">{productName}</p>
 
             <div className="flex items-center justify-between">
 
                 <div className="flex flex-col">
                     {/* Discounted price and Precentage */}
-                    <div className="flex items-center">
-                        <p className="text-xs text-gray-500 line-through"><span>Rs.</span>15,000.00</p>
-                        <Badge variant={"default"} className="text-xs scale-75">-33%</Badge>
+                    <div className={`items-center ${isDiscounted? 'flex': 'hidden'}`}>
+                        <p className="text-xs text-gray-500 line-through"><span>Rs.</span>{productPrice}.00</p>
+                        <Badge variant={"default"} className="text-xs scale-75">{((productPrice - discountedPrice)/productPrice)*100}</Badge>
                     </div>
 
                     {/* Original Price */}

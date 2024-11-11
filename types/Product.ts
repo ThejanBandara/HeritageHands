@@ -1,6 +1,6 @@
 export interface Product {
   productID : number
-  CreatedAt : Date
+  CreatedAt : string
   productName : string
   productCategory : string
   productPrice: number
@@ -12,5 +12,6 @@ export interface Product {
   productDeliveryOption: string
   isProductMadeInSL : boolean
   isProductOnFeaturedSection: boolean   
+  isProductInStock: boolean
   }
   
