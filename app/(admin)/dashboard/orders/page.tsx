@@ -1,8 +1,11 @@
+import Navbar from '@/components/store/Navbar'
 import React from 'react'
 
 const AdminOrdersPage = () => {
   return (
-    <div>AdminOrdersPage</div>
+    <div>
+      
+    </div>
   )
 }
 

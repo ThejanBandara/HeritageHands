@@ -5,7 +5,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   return (
     <SidebarProvider>
       <AppSidebar />
-      <main className="w-full">
+      <main className="w-full h-screen max-h-screen overflow-hidden">
         <SidebarTrigger />
         {children}
       </main>
