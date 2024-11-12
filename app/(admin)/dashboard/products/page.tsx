@@ -1,3 +1,4 @@
+'use client'
 import AddNewProductForm from '@/components/admin/AddNewProduct'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -153,8 +154,8 @@ const AdminProductsPage = () => {
   return (
     <div className='w-full h-screen max-h-screen overflow-hidden'>
       <div className='w-full px-4 flex items-center justify-between'>
-        <h1 className='text-2xl font-semibold'>Products</h1>
-
+        <h1 className='text-2xl font-semibold'>Products</h1> 
+        
         <Dialog>
           <DialogTrigger asChild>
             <Button className=''>
