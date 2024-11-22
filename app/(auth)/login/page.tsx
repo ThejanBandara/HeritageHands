@@ -4,15 +4,13 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import "../auth.css";
 import { auth } from "@/firebase";
 import {
   signInWithEmailAndPassword,
   signInWithPopup,
   GoogleAuthProvider,
-  getAuth,
-  onAuthStateChanged,
 } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
@@ -93,7 +91,6 @@ const LoginPage = () => {
           console.log(user);
         })
         .catch((error) => {
-          const errorCode = error.code;
           const errorMessage = error.message;
           console.log(errorMessage);
 
@@ -171,7 +168,7 @@ const LoginPage = () => {
             signInWithPopup(auth, provider)
             .then((userCredential) => {
               // Signed in 
-              const user = userCredential.user;
+              // const user = userCredential.user;
               // ...
               toast(
                 <div className="text-green-800 font-semibold flex gap-2 items-center">
@@ -195,8 +192,7 @@ const LoginPage = () => {
               router.push('/')
             })
             .catch((error) => {
-              const errorCode = error.code;
-              const errorMessage = error.message;
+              console.log("error logging in with google")
             })
           }}
         >

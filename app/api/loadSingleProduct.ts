@@ -17,7 +17,7 @@ const loadSingleProduct = async (productID: string) => {
     } else {
       console.log("No such document! : loadSingleProduct");
     }
-  } catch (error) {
+  } catch  {
     console.log("error fetching data: loadSingleProduct");
   }
 };

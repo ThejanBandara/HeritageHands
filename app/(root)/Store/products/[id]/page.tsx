@@ -15,10 +15,10 @@ const DetailsPage = async({params} : {params: Promise<{id: string}>}) => {
     const product : Product | undefined = await loadSingleProduct((await params).id);
 
     const calculateDiscount = () => {
-        let price = product?.productPrice || 0; 
-        let discount = product?.discountedPrice || 0;
+        const price = product?.productPrice || 0; 
+        const discount = product?.discountedPrice || 0;
 
-        let discountPercentage =
+        const discountPercentage =
           ((price - discount) / price) * 100;
         return Math.trunc(discountPercentage);
       };

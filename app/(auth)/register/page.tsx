@@ -6,14 +6,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
 import '../auth.css'
-import { createUserWithEmailAndPassword, getAuth, signInWithPopup, updateProfile} from 'firebase/auth'
+import {   signInWithPopup} from 'firebase/auth'
 import { GoogleAuthProvider } from 'firebase/auth' 
-import { useRouter } from 'next/navigation'
+// import { useRouter } from 'next/navigation'
 import { auth } from '@/firebase'
 
 const RegisterPage = () => {
     const provider = new GoogleAuthProvider();
-    const router = useRouter()
+    // const router = useRouter()
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
@@ -57,7 +57,7 @@ const RegisterPage = () => {
                         <Input type='password' placeholder='********' onChange={(e) => {setConfirmPassword(e.target.value)}}/>
                     </div>
 
-                    <Button className='w-full mt-4'>Sign up</Button>
+                    <Button className='w-full mt-4' onClick={() => {console.log(firstName, lastName, email, password, confirmPassword)}}>Sign up</Button>
                 </form>
 
                 <p className='text-sm text-gray-900 py-1'>or continue with</p>

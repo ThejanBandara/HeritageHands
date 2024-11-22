@@ -156,6 +156,7 @@ const ProductsSection = () => {
                 console.error('Error loading products:', error);
             } finally {
                 setIsLoading(false);
+                console.log(isLoading)
             }
         }
 

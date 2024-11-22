@@ -14,7 +14,7 @@ const loadProducts = async () => {
         });
         return products
     }
-    catch(error) {
+    catch {
         console.log('error fetching data: load All Products')
     }
 }
