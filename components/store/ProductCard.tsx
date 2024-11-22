@@ -4,7 +4,6 @@ import { Badge } from "../ui/badge";
 import Link from "next/link";
 import { FC } from "react";
 import { Product } from "@/types/Product";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 const ProductCard: FC<Product> = ({
   productID,
@@ -14,9 +13,6 @@ const ProductCard: FC<Product> = ({
   imageURL,
   isDiscounted,
   discountedPrice,
-  isProductOnSaleSection,
-  productDescription,
-  productDeliveryOption,
 }) => {
   const calculateDiscount = () => {
     let discountPercentage =
@@ -49,18 +45,16 @@ const ProductCard: FC<Product> = ({
           {/* Discounted price and Precentage */}
           <div className={`items-center ${isDiscounted ? "flex" : "flex"}`}>
             <p
-              className={`text-xs text-gray-500 line-through ${
-                isDiscounted ? "block" : " invisible"
-              }`}
+              className={`text-xs text-gray-500 line-through ${isDiscounted ? "block" : " invisible"
+                }`}
             >
               <span>Rs.</span>
-              {productPrice}.00
+              {isDiscounted? discountedPrice : productPrice}.00
             </p>
             <Badge
               variant={"default"}
-              className={`text-xs scale-75 ${
-                isDiscounted ? "block" : " invisible"
-              }`}
+              className={`text-xs scale-75 ${isDiscounted ? "block" : " invisible"
+                }`}
             >
               {calculateDiscount()} %
             </Badge>
@@ -73,7 +67,7 @@ const ProductCard: FC<Product> = ({
         </div>
 
         {/* add to cart Button */}
-        <button className=" aspect-square bg-black text-white p-2 rounded-md z-10">
+        <button className=" aspect-square bg-black text-white p-2 rounded-md z-10" onClick={(e) => {e.preventDefault()}}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -112,7 +106,7 @@ const ProductCard: FC<Product> = ({
       {/* New and top Badges */}
       <div className=" absolute top-0 left-0 mt-2 ml-2 flex flex-row gap-1 scale-90">
         <Badge
-          className={` flex-row gap-1 bg-orange-500 text-black  font-medium ${isDiscounted? 'flex' : 'hidden'}`}
+          className={` flex-row gap-1 bg-orange-500 text-black  font-medium ${isDiscounted ? 'flex' : 'hidden'}`}
           variant={"default"}
         >
           <svg

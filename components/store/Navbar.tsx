@@ -8,9 +8,9 @@ import { Sheet, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetT
 import Image from 'next/image'
 
 const Navbar = () => {
-
+  // sm:bg-red-300 md:bg-green-300 lg:bg-blue-300 xl:bg-yellow-300 2xl:bg-pink-300
   return (
-    <nav className='w-full fixed top-0 flex flex-col gap-2 px-6 py-2 shadow-sm z-10 bg-white sm:bg-red-300 md:bg-green-300 lg:bg-blue-300 xl:bg-yellow-300 2xl:bg-pink-300'>
+    <nav className='w-full fixed top-0 flex flex-col gap-2 px-6 py-2 shadow-sm z-10 bg-white '>
       <div className="flex flex-row items-center justify-between mt-2">
         <Link href={'/'}>
           <Image src={'/logo.png'} height={70} width={70} alt="logo" priority={true}/>
