@@ -15,7 +15,7 @@ const ProductCard: FC<Product> = ({
   discountedPrice,
 }) => {
   const calculateDiscount = () => {
-    let discountPercentage =
+    const discountPercentage =
       ((productPrice - discountedPrice) / productPrice) * 100;
     return Math.trunc(discountPercentage);
   };

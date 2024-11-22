@@ -168,7 +168,8 @@ const LoginPage = () => {
             signInWithPopup(auth, provider)
             .then((userCredential) => {
               // Signed in 
-              // const user = userCredential.user;
+              const user = userCredential.user;
+              console.log(user)
               // ...
               toast(
                 <div className="text-green-800 font-semibold flex gap-2 items-center">
@@ -191,7 +192,7 @@ const LoginPage = () => {
               );
               router.push('/')
             })
-            .catch((error) => {
+            .catch(() => {
               console.log("error logging in with google")
             })
           }}
