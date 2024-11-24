@@ -1,18 +1,25 @@
 import { Product } from "./Product";
 
-interface cartItem {
+export interface cartItem {
     id: string;
     productID: string;
     product: Product;
+    price: number;
     quantity: number;
     total: number;
 }
 
-interface cartState {
+export interface cartState {
     cartItems: cartItem[];
     cartTotal: number;
 }
 
-interface cartContext {
-
+export interface cartContext {
+    state: cartState;
+    addToCart: (item: cartItem) => void;
+    removeFromCart: (id: string) => void;
+    increaseQuantity: (id: string) => void;
+    decreaseQuantity: (id: string) => void;
+    clearCart: () => void;
 }
+

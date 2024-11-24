@@ -162,6 +162,7 @@ const ProductsSection = () => {
 
         fetchProducts();
     },[])
+
     return (
         <section className='mt-6 md:mt-8 px-4'>
             <div>
