@@ -1,6 +1,7 @@
 'use client'
 import { cartContext, cartItem, cartState } from "@/types/Cart";
 import { createContext, ReactNode, useContext, useReducer } from "react";
+import { toast } from "sonner";
 
 const initialState: cartState = {
   cartItems: [],
@@ -16,7 +17,6 @@ const cartReducer = (state: cartState, action: any): cartState => {
         (item) => item.productID === action.payload.productID
       ); //finds if there's an item already in the cart
       let updatedItems;
-
       if (exsistingItem) {
         updatedItems = state.cartItems.map((item) =>
           item.productID === action.payload.productID
@@ -33,6 +33,7 @@ const cartReducer = (state: cartState, action: any): cartState => {
           0
         ),
       };
+      
     case "REMOVE_FROM_CART":
       const filteredItems = state.cartItems.filter(
         (item) => item.id !== action.payload
@@ -80,6 +81,7 @@ const cartReducer = (state: cartState, action: any): cartState => {
     default:
       return state;
   }
+ 
 };
 
 // creating context

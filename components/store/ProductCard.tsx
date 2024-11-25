@@ -4,6 +4,8 @@ import { Badge } from "../ui/badge";
 import Link from "next/link";
 import { FC } from "react";
 import { Product } from "@/types/Product";
+import { useCart } from "@/context/cartContext";
+import { cartItem } from "@/types/Cart";
 
 const ProductCard: FC<Product> = ({
   productID,
@@ -19,6 +21,20 @@ const ProductCard: FC<Product> = ({
       ((productPrice - discountedPrice) / productPrice) * 100;
     return Math.trunc(discountPercentage);
   };
+
+  const {addToCart} = useCart();
+
+    const handleAddToCart = (id: string, price: number) => {
+        const item: cartItem = {
+           id: id,
+           productID: id,
+           price: price,
+           quantity: 1,
+           total: price
+        }
+
+        addToCart(item);
+    }
 
   return (
     <Link
@@ -67,7 +83,7 @@ const ProductCard: FC<Product> = ({
         </div>
 
         {/* add to cart Button */}
-        <button className=" aspect-square bg-black text-white p-2 rounded-md z-10" onClick={(e) => {e.preventDefault()}}>
+        <button className=" aspect-square bg-black text-white p-2 rounded-md z-10" onClick={(e) => {e.preventDefault(); handleAddToCart(productID, isDiscounted? discountedPrice : productPrice)}}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

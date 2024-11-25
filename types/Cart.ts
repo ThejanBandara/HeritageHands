@@ -3,7 +3,6 @@ import { Product } from "./Product";
 export interface cartItem {
     id: string;
     productID: string;
-    product: Product;
     price: number;
     quantity: number;
     total: number;
