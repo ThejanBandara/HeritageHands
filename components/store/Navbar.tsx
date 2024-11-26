@@ -47,7 +47,7 @@ const Navbar = () => {
                     <Button variant={"destructive"} onClick={() => {
                       signOut(auth)
                       toast.info('Signed out successfully')
-                    }}>Logout</Button>
+                    }}>Sign out</Button>
                   </PopoverContent>
                 </Popover>
 

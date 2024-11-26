@@ -24,7 +24,7 @@ const DetailsPage = async({params} : {params: Promise<{id: string}>}) => {
       };
 
     return (
-        <div className='pt-12 px-2 bg-white'>
+        <div className='pt-12 px-2'>
             <div className='flex flex-col gap-1 pb-2'>
                 <p className='font-bold text-xl text-wrap max-w-[95vw]'>{product?.productName}</p>
                 <div className='flex flex-row items-center pt-1'>

@@ -9,9 +9,13 @@ import { useCart } from '@/context/cartContext'
 import { cartItem } from '@/types/Cart'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/tooltip'
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from '../ui/alert-dialog'
+import { useRouter } from 'next/navigation'
+import { toast } from 'sonner'
 const CartSheet = () => {
 
   const { state, clearCart } = useCart();
+  const router = useRouter();
+
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -43,7 +47,15 @@ const CartSheet = () => {
               <p>Rs. {state.cartTotal}.00</p>
             </div>
             <div className='flex items-center gap-2'>
-              <Button className='w-5/6'>Proceed to Checkout</Button>
+              <Button className='w-5/6' onClick={() => {
+                if(state.cartItems.length === 0){
+                  toast('add some items to cart before checkout')
+                }
+                else{
+                  toast.info('proceeding to checkout')
+                  router.push('/checkout')
+                }
+              }}>Proceed to Checkout</Button>
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>

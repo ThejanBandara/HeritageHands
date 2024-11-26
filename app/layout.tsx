@@ -3,6 +3,7 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/sonner"
 import Image from "next/image";
 import { AuthProvider } from "@/context/UserAuthContext";
+import { CartProvider } from "@/context/cartContext";
 
 export const metadata: Metadata = {
   title: "HeritageHands",
@@ -12,13 +13,15 @@ export const metadata: Metadata = {
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <AuthProvider>
-      <html lang="en">
-        <body className=" ">
-          <Image src={'/bg-pattern.jpg'} width={1500} height={1500} alt="banner" className="w-full h-screen overflow-hidden opacity-40 -z-10 fixed top-0  object-cover" />
-          {children}
-          <Toaster position="bottom-left"/>
-        </body>
-      </html>
+      <CartProvider>
+        <html lang="en">
+          <body className=" ">
+            <Image src={'/bg-pattern.jpg'} width={1500} height={1500} alt="banner" priority className="w-full h-screen overflow-hidden opacity-40 -z-10 fixed top-0  object-cover" />
+            {children}
+            <Toaster position="bottom-left" />
+          </body>
+        </html>
+      </CartProvider>
     </AuthProvider>
   );
 }
