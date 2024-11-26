@@ -6,6 +6,9 @@ import { FC } from "react";
 import { Product } from "@/types/Product";
 import { useCart } from "@/context/cartContext";
 import { cartItem } from "@/types/Cart";
+import { useAuth } from "@/context/UserAuthContext";
+import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 
 const ProductCard: FC<Product> = ({
   productID,
@@ -22,19 +25,21 @@ const ProductCard: FC<Product> = ({
     return Math.trunc(discountPercentage);
   };
 
-  const {addToCart} = useCart();
+  const { addToCart } = useCart();
+  const { user } = useAuth();
+  const router = useRouter();
 
-    const handleAddToCart = (id: string, price: number) => {
-        const item: cartItem = {
-           id: id,
-           productID: id,
-           price: price,
-           quantity: 1,
-           total: price
-        }
-
-        addToCart(item);
+  const handleAddToCart = (id: string, price: number) => {
+    const item: cartItem = {
+      id: id,
+      productID: id,
+      price: price,
+      quantity: 1,
+      total: price
     }
+
+    addToCart(item);
+  }
 
   return (
     <Link
@@ -65,7 +70,7 @@ const ProductCard: FC<Product> = ({
                 }`}
             >
               <span>Rs.</span>
-              {isDiscounted? discountedPrice : productPrice}.00
+              {isDiscounted ? discountedPrice : productPrice}.00
             </p>
             <Badge
               variant={"default"}
@@ -83,7 +88,17 @@ const ProductCard: FC<Product> = ({
         </div>
 
         {/* add to cart Button */}
-        <button className=" aspect-square bg-black text-white p-2 rounded-md z-10" onClick={(e) => {e.preventDefault(); handleAddToCart(productID, isDiscounted? discountedPrice : productPrice)}}>
+        <button className=" aspect-square bg-black text-white p-2 rounded-md z-10" onClick={(e) => {
+          e.preventDefault();
+
+          if (user) {
+            handleAddToCart(productID, isDiscounted ? discountedPrice : productPrice);
+          } else {
+            toast.info("Log in or create an account first");
+            router.push("/register");
+          }
+
+        }}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

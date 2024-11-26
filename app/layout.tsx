@@ -16,7 +16,7 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
         <body className=" ">
           <Image src={'/bg-pattern.jpg'} width={1500} height={1500} alt="banner" className="w-full h-screen overflow-hidden opacity-40 -z-10 fixed top-0  object-cover" />
           {children}
-          <Toaster />
+          <Toaster position="bottom-left"/>
         </body>
       </html>
     </AuthProvider>

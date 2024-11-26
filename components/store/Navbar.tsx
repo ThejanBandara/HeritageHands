@@ -2,12 +2,14 @@
 import { Input } from '../ui/input'
 import Link from 'next/link'
 import { Button } from '../ui/button'
-import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar'
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover'
 import Image from 'next/image'
 import CartSheet from './CartSheet'
 import { useAuth } from '@/context/UserAuthContext'
 import { useRouter } from 'next/navigation'
+import { signOut } from 'firebase/auth'
+import { auth } from '@/firebase'
+import { toast } from 'sonner'
 
 const Navbar = () => {
 
@@ -36,20 +38,16 @@ const Navbar = () => {
 
                 <Popover>
                   <PopoverTrigger asChild>
-                    <Avatar >
-                      <AvatarImage src={user.photoURL || ''} />
-                      <AvatarFallback>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-                        </svg>
-                      </AvatarFallback>
-                    </Avatar>
+                    <Image src={user.photoURL || '/user.png'} width={40} height={40} alt='user profile picture' className='size-10 rounded-full cursor-pointer'/>
                   </PopoverTrigger>
                   <PopoverContent className='flex flex-col gap-2 mr-3' autoFocus={false} >
                     <p>hi! {user.displayName}</p>
                     <Button variant={"outline"} onClick={() => { console.log(user) }}>Profile</Button>
                     <Button variant={"outline"}>Settings</Button>
-                    <Button variant={"destructive"}>Logout</Button>
+                    <Button variant={"destructive"} onClick={() => {
+                      signOut(auth)
+                      toast.info('Signed out successfully')
+                    }}>Logout</Button>
                   </PopoverContent>
                 </Popover>
 

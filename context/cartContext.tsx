@@ -46,6 +46,7 @@ const cartReducer = (state: cartState, action: any): cartState => {
       const filteredItems = state.cartItems.filter(
         (item) => item.id !== action.payload
       );
+      toast.info('1 item removed from cart')
       return {
         cartItems: filteredItems,
         cartTotal: filteredItems.reduce(

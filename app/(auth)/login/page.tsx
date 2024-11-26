@@ -11,6 +11,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   GoogleAuthProvider,
+  signInWithRedirect,
 } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
@@ -166,10 +167,8 @@ const LoginPage = () => {
           className="w-5/6 px-4"
           action={async () => {
             signInWithPopup(auth, provider)
-            .then((userCredential) => {
+            .then(() => {
               // Signed in 
-              const user = userCredential.user;
-              console.log(user)
               // ...
               toast(
                 <div className="text-green-800 font-semibold flex gap-2 items-center">
