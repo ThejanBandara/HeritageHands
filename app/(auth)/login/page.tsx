@@ -11,7 +11,6 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   GoogleAuthProvider,
-  signInWithRedirect,
 } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
