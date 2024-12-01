@@ -1,4 +1,5 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from '@/components/ui/card'
+import PaymentAnimation from './paymentAnimation/PaymentAnimation'
 
 const PaymentGateway = () => {
   return (
@@ -7,8 +8,8 @@ const PaymentGateway = () => {
         <CardTitle>Payment</CardTitle>
         <CardDescription>This is a fake payment gateway. you won't be charged</CardDescription>
     </CardHeader>
-    <CardContent className='h-5/6'>
-        
+    <CardContent className='h-5/6 flex items-center justify-center'>
+        <PaymentAnimation/>
     </CardContent>
     <CardFooter>
 

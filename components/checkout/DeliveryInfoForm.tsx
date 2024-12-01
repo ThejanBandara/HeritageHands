@@ -5,6 +5,8 @@ import { Button } from '../ui/button';
 import { Input } from '../ui/input';
 import { Label } from '../ui/label';
 import { toast } from 'sonner';
+import { useCheckout } from '@/context/CheckoutContext';
+import { DeliveryInfo } from '@/types/Order';
 
 // Define types for form data and validation
 interface FormData {
@@ -69,7 +71,7 @@ const DeliveryInfoForm: React.FC = () => {
             secondaryContactNo: formData.secondaryContactNo.trim() !== '' && formData.secondaryContactNo.trim().length !== 10,
             email: !/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(formData.email),
             addressLineOne: formData.addressLineOne.trim() === '',
-            addressLineTwo: false, // Optional field, no validation needed
+            addressLineTwo: formData.addressLineTwo.trim() === '', 
             city: formData.city.trim() === '',
             state: formData.state.trim() === '',
             zipCode: formData.zipCode.trim().length !== 5,
@@ -83,12 +85,26 @@ const DeliveryInfoForm: React.FC = () => {
 
     const handleSubmit = (): void => {
         if (validateData()) {
+            const deliverydata: DeliveryInfo  = {
+                fullName: formData.fName,
+                phoneOne: formData.contactNo,
+                phoneTwo: formData.secondaryContactNo,
+                email: formData.email,
+                addressOne: formData.addressLineOne,
+                addressTwo: formData.addressLineTwo,
+                city: formData.city,
+                state: formData.state,
+                postalCode: formData.zipCode
+            }
             toast.success('Form submitted successfully!');
-            // Handle form submission logic here
+            setDeliveryInfo(deliverydata);
+            nextStep()
         } else {
             toast.error('Please fix the highlighted errors.');
         }
     };
+
+    const {nextStep, prevStep, setDeliveryInfo} = useCheckout();
 
     return (
         <Card className='w-10/12 h-5/6 bg-white border-[1px] border-gray-400 '>
@@ -108,7 +124,7 @@ const DeliveryInfoForm: React.FC = () => {
                                     type='text'
                                     value={formData.fName}
                                     onChange={(e) => handleInputChange('fName', e.target.value)}
-                                    className={formValidation.fName ? 'border-red-500' : ''}
+                                    className={formValidation.fName ? 'border-red-500' : 'border-gray-400'}
                                 />
                             </div>
                             <div>
@@ -117,7 +133,7 @@ const DeliveryInfoForm: React.FC = () => {
                                     type='number'
                                     value={formData.contactNo}
                                     onChange={(e) => handleInputChange('contactNo', e.target.value)}
-                                    className={formValidation.contactNo ? 'border-red-500' : ''}
+                                    className={formValidation.contactNo ? 'border-red-500' : 'border-gray-400'}
                                 />
                             </div>
                             <div>
@@ -126,7 +142,7 @@ const DeliveryInfoForm: React.FC = () => {
                                     type='number'
                                     value={formData.secondaryContactNo}
                                     onChange={(e) => handleInputChange('secondaryContactNo', e.target.value)}
-                                    className={formValidation.secondaryContactNo ? 'border-red-500' : ''}
+                                    className={formValidation.secondaryContactNo ? 'border-red-500' : 'border-gray-400'}
                                 />
                             </div>
                             <div>
@@ -135,7 +151,7 @@ const DeliveryInfoForm: React.FC = () => {
                                     type='email'
                                     value={formData.email}
                                     onChange={(e) => handleInputChange('email', e.target.value)}
-                                    className={formValidation.email ? 'border-red-500' : ''}
+                                    className={formValidation.email ? 'border-red-500' : 'border-gray-400'}
                                 />
                             </div>
                         </div>
@@ -150,7 +166,7 @@ const DeliveryInfoForm: React.FC = () => {
                                     type='text'
                                     value={formData.addressLineOne}
                                     onChange={(e) => handleInputChange('addressLineOne', e.target.value)}
-                                    className={formValidation.addressLineOne ? 'border-red-500' : ''}
+                                    className={formValidation.addressLineOne ? 'border-red-500' : 'border-gray-400'}
                                 />
                             </div>
                             <div>
@@ -159,6 +175,7 @@ const DeliveryInfoForm: React.FC = () => {
                                     type='text'
                                     value={formData.addressLineTwo}
                                     onChange={(e) => handleInputChange('addressLineTwo', e.target.value)}
+                                    className={formValidation.addressLineTwo ? 'border-red-500' : 'border-gray-400'}
                                 />
                             </div>
                             <div className='flex gap-2'>
@@ -168,16 +185,16 @@ const DeliveryInfoForm: React.FC = () => {
                                         type='text'
                                         value={formData.city}
                                         onChange={(e) => handleInputChange('city', e.target.value)}
-                                        className={formValidation.city ? 'border-red-500' : ''}
+                                        className={formValidation.city ? 'border-red-500' : 'border-gray-400'}
                                     />
                                 </div>
                                 <div className='w-1/2'>
-                                    <Label>State</Label>
+                                    <Label>State / Province</Label>
                                     <Input
                                         type='text'
                                         value={formData.state}
                                         onChange={(e) => handleInputChange('state', e.target.value)}
-                                        className={formValidation.state ? 'border-red-500' : ''}
+                                        className={formValidation.state ? 'border-red-500' : 'border-gray-400'}
                                     />
                                 </div>
                             </div>
@@ -187,7 +204,7 @@ const DeliveryInfoForm: React.FC = () => {
                                     type='number'
                                     value={formData.zipCode}
                                     onChange={(e) => handleInputChange('zipCode', e.target.value)}
-                                    className={formValidation.zipCode ? 'border-red-500' : ''}
+                                    className={formValidation.zipCode ? 'border-red-500' : 'border-gray-400'}
                                 />
                             </div>
                         </div>
@@ -195,10 +212,10 @@ const DeliveryInfoForm: React.FC = () => {
                 </form>
             </CardContent>
             <CardFooter className='w-full flex items-center justify-end gap-2'>
-                <Button variant={'outline'}>
+                <Button variant={'outline'} className='border-black' onClick={() => prevStep()}>
                     Go Back
                 </Button>
-                <Button onClick={handleSubmit}>
+                <Button onClick={() => {handleSubmit()}}>
                     Continue
                 </Button>
             </CardFooter>
