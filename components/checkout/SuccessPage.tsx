@@ -1,13 +1,11 @@
 import { Card, CardContent, CardFooter } from '@/components/ui/card'
 import { useAuth } from '@/context/UserAuthContext'
 import { Button } from '../ui/button';
-import { useEffect } from 'react';
 import { addDoc, collection } from 'firebase/firestore';
 import { db } from '@/firebase';
 import { useCheckout } from '@/context/CheckoutContext';
 import { useCart } from '@/context/cartContext';
 import { toast } from 'sonner';
-import { useRouter } from 'next/router';
 import { redirect } from 'next/navigation';
 
 const SuccessPage = () => {
@@ -30,11 +28,13 @@ const SuccessPage = () => {
         await addDoc(collection(db, 'order'), order);
         console.log('Order saved in firestore')
         clearCart()
-        redirect('/')
       }
       catch {
         console.log('Error saving data on firestore')
         toast.error('error placing order')
+      }
+      finally{
+        redirect('/')
       }
     }
 

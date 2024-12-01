@@ -3,7 +3,6 @@
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'
 import React from 'react'
 import Autoplay from 'embla-carousel-autoplay'
-import Image from 'next/image'
 
 const Hero = () => {
 
