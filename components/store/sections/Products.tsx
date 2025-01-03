@@ -37,7 +37,7 @@ const ProductsSection = () => {
             <div>
                 <div className='flex items-center justify-between'>
                     <h1 className='text-lg md:text-2xl font-bold'>Recommended For You</h1>
-                    <Link href={'/store'} className='text-sm md:text-base'>See More</Link>
+                    <Link href={'/Store'} className='text-sm md:text-base'>See More</Link>
                 </div>
 
                 <div className='mt-2'>

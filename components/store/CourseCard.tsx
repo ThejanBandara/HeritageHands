@@ -1,9 +1,10 @@
 import Image from "next/image"
 import { Button } from "../ui/button"
+import Link from "next/link"
 
 const CourseCard = () => {
     return (
-        <div className="m-2 mb-4 p-2 border-black border-2 rounded-lg shadow bg-white">
+        <Link href={'/workshops/1'} className="m-2 mb-4 p-2 border-black border-2 rounded-lg shadow bg-white">
             <Image src={'/course2.webp'} width={300} height={300} className="w-full rounded-md" alt="course" />
             <div className="pt-2">
                 <p className="font-semibold text-xl">Bamboo Weaving Workshop</p>
@@ -28,7 +29,7 @@ const CourseCard = () => {
                     <Button variant={"outline"} className="border-black w-1/2">More Info </Button>
                     <Button variant={"default"} className="w-1/2">Enroll Now</Button>
             </div>
-        </div>
+        </Link>
     )
 }
 
