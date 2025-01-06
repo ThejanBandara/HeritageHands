@@ -11,7 +11,7 @@ const Contact = () => {
     const { toast } = useToast()
 
     return (
-        <div className='mt-12 px-4 bg-gray-50 bg-opacity-75'>
+        <div className='mt-12 px-4 bg-gray-50 bg-opacity-75 md:px-32 md:py-8'>
             <h1 className='text-lg md:text-2xl font-bold'>Get in touch</h1>
 
             <form action="" className='mt-2 md:px-16'>

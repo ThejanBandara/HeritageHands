@@ -39,7 +39,7 @@ const StorePage = () => {
         </Link>
         <h1 className='text-xl md:text-2xl font-bold'>Store</h1>
       </div>
-      <div className='grid grid-cols-2 grid-rows-auto gap-2 w-full min-h-screen px-2 py-2'>
+      <div className='p-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-7 grid-rows-auto gap-2'>
         {
           isLoading ? (
             Array.from({ length: 10 }).map((_, index) => (
