@@ -1,8 +1,28 @@
+'use client'
+import loadWorkshops from '@/app/api/loadWorkshops'
 import CourseCard from '@/components/store/CourseCard'
+import { Workshop } from '@/types/workshop'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
-const Workshop = () => {
+const WorkshopPage = () => {
+
+  const [workshops, setWorkshops] = useState<Workshop[]>([])
+
+  useEffect(() => {
+    const fetchWorkshops = async () => {
+      try {
+        const workshopsData = await loadWorkshops();
+        setWorkshops(workshopsData || []);
+      } catch (error) {
+        console.error('Error loading workshops:', error);
+      }
+    }
+
+    fetchWorkshops();
+    console.log(workshops)
+  }, [])
+
   return (
     <div className='w-full mt-12'>
       <div className='py-2 flex items-center gap-2'>
@@ -13,14 +33,17 @@ const Workshop = () => {
         </Link>
         <h1 className='text-xl md:text-2xl font-bold'>Workshops</h1>
       </div>
-      <div className='min-h-screen p-2 grid grid-cols-1 grid-rows-auto'>
-        <CourseCard/>
-        <CourseCard/>
-        <CourseCard/>
-        <CourseCard/>
+      <div className=' p-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 grid-rows-auto'>
+        {
+          workshops?.map((workshop) => (
+            <CourseCard key={workshop.workshopID} 
+              {...workshop}
+            />
+          ))
+        }
       </div>
     </div>
   )
 }
 
-export default Workshop
+export default WorkshopPage

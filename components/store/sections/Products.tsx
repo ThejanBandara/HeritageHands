@@ -54,7 +54,7 @@ const ProductsSection = () => {
                                     products?.map((product) => (
                                         <CarouselItem
                                             key={product.productID}
-                                            className='basis-[65%] md:basis-[30%] lg:basis-[20%] xl:basis-[18%]'
+                                            className='basis-[50%] sm:basis-[40%] md:basis-[30%] lg:basis-[20%] xl:basis-[18%]'
                                         >
                                             <ProductCard productID={product.productID} CreatedAt={product.CreatedAt} productName={product.productName} productCategory={product.productCategory} productPrice={product.productPrice} imageURL={product.imageURL} isDiscounted={product.isDiscounted} discountedPrice={product.discountedPrice} isProductOnSaleSection={product.isProductOnSaleSection} productDescription={product.productDescription} productDeliveryOption={product.productDeliveryOption} isProductMadeInSL={product.isProductMadeInSL} isProductOnFeaturedSection={product.isProductOnFeaturedSection} isProductInStock={product.isProductInStock} />
 

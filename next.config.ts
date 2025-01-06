@@ -12,6 +12,12 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
+        hostname: "www.bluelankatours.com",
+        port: "",
+        pathname: "**"
+      },
+      {
+        protocol: "https",
         hostname: "*.googleusercontent.com",
         port: "",
         pathname: "**",
