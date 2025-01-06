@@ -1,4 +1,4 @@
-import { Body, Button, Column, Font, Head, Html, Img, Link, Row, Section, Tailwind } from "@react-email/components";
+import { Body,  Column, Font, Head, Html, Img,  Row, Section, Tailwind } from "@react-email/components";
 import * as React from "react";
 
 export default function Email() {

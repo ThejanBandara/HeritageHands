@@ -4,7 +4,6 @@ import CourseCard from "../CourseCard"
 import { useEffect, useState } from "react"
 import { Workshop } from "@/types/workshop"
 import loadWorkshops from "@/app/api/loadWorkshops"
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
 import { Skeleton } from "@/components/ui/skeleton"
 
 

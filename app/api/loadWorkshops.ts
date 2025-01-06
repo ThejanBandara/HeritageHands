@@ -1,5 +1,4 @@
 import { db } from "@/firebase";
-import { Product } from "@/types/Product";
 import { Workshop } from "@/types/workshop";
 import { collection, getDocs } from "firebase/firestore";
 
